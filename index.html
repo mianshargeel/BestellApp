@@ -3,13 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/Favicon/favicon-16x16.png" type="image/x-icon">
   <title>Bastell App</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="./styles/basket.css">
   <link rel="stylesheet" href="./styles/standard.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body>
+<body onload="init()">
   
+  <nav class="navbar my-bg">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1 myNav"><img class="logoImg" src="./assets/Logo/Logo.png" alt=""></span>
+  </div>
+</nav>
+
+  <div class="main-container">
+    
+    <section class="content">
+      <header class="header-content">
+       <div class="header-iner">
+            <div class="restaurantInfo">
+            <h2>La Pizza Rossopomodoro – Köln</h2>
+            <span>Bewerbung (4.3von 5 Sternen)</span>
+          </div>
+          <nav class="navbar bg-body-tertiary">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img class="main-dishIcon" src="./assets/img/arrowhead.png" alt="">Hautpgerichte Beilage</a>
+              </div>
+            </nav>
+       </div>
+      </header>
+
+      <div class="recipes">
+        <h3>Hautpgerichte</h3>
+        <div id="recipe-content">
+
+        </div>
+        <img class="recipe-img" src="./assets/img/pizza1.jpg" alt="">
+        <button class="btn btn-primary" id="smallBasketButton" onclick="showSmallBasket()" >Warenkorb</button>
+      </div>
+
+
+    </section>
+      
+    <section class="basketWrapper">
+      <div class="basket">
+        <h2>Warenkorb</h2>
+        <div id="basketContent"></div>
+        <button class="btn btn-primary" id="backToContentButton" onclick="showSmallBasket()" >Zurück</button>
+      </div>
+    </section>
+  </div> <!-- end of main-container -->
+ 
+  
+  <!-- <footer>
+    <nav class="navbar my-bg">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">La Pizza Rossopomodoro – Köln</span>
+  </div>
+</nav>
+  </footer> -->
 
   <script src="./scripts/db.js"></script>
   <script src="./scripts/template.js"></script>

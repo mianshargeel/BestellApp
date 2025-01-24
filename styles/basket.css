@@ -1,0 +1,66 @@
+.basketWrapper{
+  width: 300px;
+  padding: 16px;
+  border: 2px solid white;
+   position: sticky;
+  top: 0;
+  text-align: center;
+  overflow-x: hidden;
+  border-left: 1px solid #d3d3d352;
+  display: block;
+}
+.hidden {
+  display: none !important;
+}
+.basket{
+  width: 100%;
+  height:auto;
+  background-color: #fff;
+  
+}
+.basketItem{
+ 
+}
+.subItems{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+  padding: 10px 10px 20px;
+}
+.plusMinus{
+  width: 20px;
+  cursor: pointer;
+}
+.sumDetails{
+  padding: 20px;
+  border-top: 1px solid #d3d3d36e;
+}
+.removeBtn{
+  width: 22px;
+  cursor: pointer;
+}
+.empty-cart{
+  width: 150px;
+  height: 150px;
+  padding: 30px;
+}
+@media screen and (max-width: 600px) and (min-width: 320px) {
+  .basketWrapper {
+   display: none;
+    width: 100%;
+  }
+  .main-container{
+    display: block;
+  }
+  .content{
+    width: 100%;
+  }
+ #smallBasketButton{
+  display: block;
+ }
+ #backToContentButton{
+  display: block;
+ }
+ 
+}

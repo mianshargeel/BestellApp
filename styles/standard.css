@@ -1,0 +1,17 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  /* color: white !important; */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+a{
+  text-decoration: none !important;
+}
