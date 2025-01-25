@@ -25,13 +25,13 @@ function addToBasket(index) {
   if (basketItem) {
     basket.amount++;
   } else {
-    // basket.push({ ...dish, amount: 1 });//using spread-opperator or
-    basket.push({
-      name: dish.name,
-      description: dish.description,
-      price: dish.price,
-      amount: 1
-    });
+    basket.push({ ...dish});//using spread-opperator or
+    // basket.push({
+    //   name: dish.name,
+    //   description: dish.description,
+    //   price: dish.price,
+    //   amount: 1
+    // });
   }
   renderBasket();
 }

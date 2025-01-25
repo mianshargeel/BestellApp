@@ -3,8 +3,9 @@ let basketContentRef = document.getElementById('basketContent');
 let basket = [];
 
 recipeContentRef.innerHTML = '';
+basketContentRef.innerHTML = '';
 
-function renderRecipeTemplate() {
+function renderRecipeTemplate() { //Content-template
   myDishes.forEach((ele, index) => {
     recipeContentRef.innerHTML += `
       <div class="card card-hover mb-2">
@@ -19,38 +20,40 @@ function renderRecipeTemplate() {
   });
 }
 
-function renderBasket() {
-  let basketHtml = '';
-  let subTotal = 0;
-  let deliveryFee = 5.00;
+function renderBasket() { //Basket-template
+  let basketContentHtml = '';
   
   basket.forEach((item, index) => {
-    basketHtml += `
+    basketContentHtml += `
       <div className="basketItem">
         <p><strong>${item.name}</strong></p>
-       <div class='subItems'>
+        <div class='subItems'>
           <img class='plusMinus' onclick='decreaseItemsInBasket(${index})' src="assets/img/minus.png" alt="" />${item.amount}x  
           <img class='plusMinus' onclick='increaseItemsInBasket(${index})' src="assets/img/plus.png" alt="" />${item.price}€
           <img onclick='delteItemFromBasket(${index})' class='removeBtn' src="./assets/img/delete.png" alt="" />
         </div>
       </div>
     `;
-  });
+  });  
+  basketContentRef.innerHTML = basketContentHtml + priceCalculation(); //concatinating to show both function's output in Basket 
+}
+
+function priceCalculation() {
+  let subTotal = 0;
+  let deliveryFee = 5.00;
 
   for (let i = 0; i < basket.length; i++) {
     subTotal += (basket[i].price * basket[i].amount)
   }
   let total = parseFloat(subTotal + deliveryFee).toFixed(2);
-  
-  //calculating total
-  basketHtml += `
+
+  return `
     <div class='sumDetails'>
       <p><span>Zwischenzumme: ${subTotal.toFixed(2)}€</span></p>
       <p><span>Lieferkosten: ${deliveryFee}€</span></p>
       <p><span><strong>Gesamt:</strong> ${total}€</span></p>
     </div>
   `;
-  basketContentRef.innerHTML = basketHtml;
 }
 
 function emptyBasket() {
