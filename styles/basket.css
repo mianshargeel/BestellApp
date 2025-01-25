@@ -7,7 +7,7 @@
   text-align: center;
   overflow-x: hidden;
   border-left: 1px solid #d3d3d352;
-  display: block;
+  display: block !important;
 }
 .hidden {
   display: none !important;
@@ -45,7 +45,17 @@
   height: 150px;
   padding: 30px;
 }
-@media screen and (max-width: 600px) and (min-width: 320px) {
+/* for larger screen than 600px */
+@media screen and (min-width: 601px) { 
+  .content {
+    display: block;
+  }
+  .basketWrapper {
+    display: block;
+  }
+}
+/* Small screens than 600px: Show content, hide basket */
+@media screen and (max-width: 600px) {
   .basketWrapper {
    display: none;
     width: 100%;
@@ -62,5 +72,4 @@
  #backToContentButton{
   display: block;
  }
- 
 }
