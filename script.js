@@ -25,13 +25,7 @@ function addToBasket(index) {
   if (basketItem) {
     basket.amount++;
   } else {
-    basket.push({ ...dish});//using spread-opperator or
-    // basket.push({
-    //   name: dish.name,
-    //   description: dish.description,
-    //   price: dish.price,
-    //   amount: 1
-    // });
+    basket.push({ ...dish});//passing whole Object from myDishes
   }
   renderBasket();
 }
@@ -62,5 +56,7 @@ function decreaseItemsInBasket(index) {
   }
   renderBasket();
 }
+
+
 
 

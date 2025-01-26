@@ -15,6 +15,12 @@
   <nav class="navbar my-bg">
   <div class="container-fluid">
     <span class="navbar-brand mb-0 h1 myNav"><img class="logoImg" src="./assets/Logo/Logo.png" alt=""></span>
+    <ul class="menu">
+      <li><a href="./index.html">Startseite</a></li>
+      <li><a href="#">Über uns</a></li>
+      <li><a href="#">Galerie</a></li>
+      <li><a href="#">Online Bestellen</a></li>
+    </ul>
   </div>
 </nav>
 
@@ -48,6 +54,11 @@
     </section>
       
     <section class="basketWrapper">
+      <div class="deliveryBtn">
+        <button class="btn btn-primary" id="pickup-button" onclick="selfPickupOrder()">Abholung</button>
+        <button class="btn btn-primary" id="deliver-button">Liferung</button>
+      </div>
+
       <div class="basket">
         <h2>Warenkorb</h2>
         <div id="basketContent"></div>

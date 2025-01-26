@@ -14,4 +14,17 @@ body{
 }
 a{
   text-decoration: none !important;
+  color: white !important;
+  font-size: 20px;
+}
+li{
+  list-style: none;
+}
+.menu{
+  display: flex;
+  gap: 15px;
+  padding: 10px 10px 0 0;
+}
+.menu li a:hover{
+  color: rgb(55, 38, 38);
 }

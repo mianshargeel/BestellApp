@@ -24,18 +24,15 @@ function renderBasket() { //Basket-template
   let basketContentHtml = '';
   
   basket.forEach((item, index) => {
-    basketContentHtml += `
-      <div className="basketItem">
-        <p><strong>${item.name}</strong></p>
+    basketContentHtml += `<div className="basketItem"> <p><strong>${item.name}</strong></p>
         <div class='subItems'>
           <img class='plusMinus' onclick='decreaseItemsInBasket(${index})' src="assets/img/minus.png" alt="" />${item.amount}x  
           <img class='plusMinus' onclick='increaseItemsInBasket(${index})' src="assets/img/plus.png" alt="" />${item.price}€
-          <img onclick='delteItemFromBasket(${index})' class='removeBtn' src="./assets/img/delete.png" alt="" />
-        </div>
+          <img onclick='delteItemFromBasket(${index})' class='removeBtn' src="./assets/img/delete.png" alt="" /></div>
       </div>
     `;
   });  
-  basketContentRef.innerHTML = basketContentHtml + priceCalculation(); //concatinating to show both function's output in Basket 
+  basketContentRef.innerHTML = basketContentHtml + priceCalculation(); 
 }
 
 function priceCalculation() {
@@ -46,14 +43,15 @@ function priceCalculation() {
     subTotal += (basket[i].price * basket[i].amount)
   }
   let total = parseFloat(subTotal + deliveryFee).toFixed(2);
-
   return `
-    <div class='sumDetails'>
-      <p><span>Zwischenzumme: ${subTotal.toFixed(2)}€</span></p>
-      <p><span>Lieferkosten: ${deliveryFee}€</span></p>
-      <p><span><strong>Gesamt:</strong> ${total}€</span></p>
-    </div>
+    <div class='sumDetails'> <p><span>Zwischenzumme: ${subTotal.toFixed(2)}€</span></p>
+      <p><span>Lieferkosten: ${deliveryFee}€</span></p> <p><span><strong>Gesamt:</strong> ${total}€</span></p></div>
   `;
+}
+
+function selfPickupOrder() {
+  console.log('I pickup my Order self');
+  
 }
 
 function emptyBasket() {
