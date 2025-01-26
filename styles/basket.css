@@ -7,7 +7,7 @@
   text-align: center;
   overflow-x: hidden;
   border-left: 1px solid #d3d3d352;
-  display: block !important;
+  display: block;
 }
 .hidden {
   display: none !important;
@@ -45,31 +45,33 @@
   height: 150px;
   padding: 30px;
 }
-/* for larger screen than 600px */
-@media screen and (min-width: 601px) { 
-  .content {
-    display: block;
-  }
+
+@media screen and (min-width: 601px) {
   .basketWrapper {
-    display: block;
+    display: block !important; 
   }
 }
-/* Small screens than 600px: Show content, hide basket */
 @media screen and (max-width: 600px) {
   .basketWrapper {
    display: none;
     width: 100%;
+    padding: 0px;
   }
   .main-container{
-    display: block;
+    padding: 5px;
   }
   .content{
     width: 100%;
+  }
+  .recipes{
+    padding: 0px;
   }
  #smallBasketButton{
   display: block;
  }
  #backToContentButton{
   display: block;
+  position: sticky;
+  bottom: 0;
  }
 }

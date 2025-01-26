@@ -60,3 +60,5 @@ function decreaseItemsInBasket(index) {
 
 
 
+
+

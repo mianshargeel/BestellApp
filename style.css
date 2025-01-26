@@ -18,7 +18,7 @@
   width: 100%;
   height: 100vh;
   padding: 16px;
-   overflow-x: hidden;
+  overflow-x: hidden;
   position: relative;
 }
 .content{
@@ -57,14 +57,14 @@
   color: #ff8000;
 }
 .main-dishIcon{
+  background-color: white;
+  padding: 0 0 5px 0px;
+}
+.main-dishIconImg{
   width: 35px;
 }
 .recipes{
   padding: 16px;
-   /* overflow-x: hidden; */
-}
-.recipe-content{
- 
 }
 .pizza-price{
   color: #dba680;
@@ -106,10 +106,10 @@
   cursor: pointer;
 }
 
-/* .content, .basketWrapper {
+ .content, .basketWrapper {
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-
+/*
 .hidden {
   opacity: 0;
   visibility: hidden;
