@@ -20,16 +20,18 @@ function showSmallBasket() {
 
 function addToBasket(index) {
   let dish = myDishes[index];
-  let basketItem = basket.find(item => item.name === dish.name); //checking if items exit already in basket
+  let basketItem = basket.find(item => item.name === dish.name); 
     
   if (basketItem) {
-    basket.amount++;
+    basketItem.amount++; //i replaced basket with basketItem [//making icreament only on that items, which we getting in basketItem through user-click]
   } else {
-    basket.push({ ...dish});//passing whole Object from myDishes
+    basket.push({ ...dish});
   }
+  // console.log(dish);
+  // console.log(basket);
   renderBasket();
 }
-
+//making icreament only on that items, which we getting in basketItem through user-click
 function delteItemFromBasket(index) {
   basket.splice(index, 1);
   
