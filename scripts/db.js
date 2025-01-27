@@ -30,4 +30,5 @@ let myDishes = [
     "price": 11.50,
     "amount": 1
   }
+  
 ];

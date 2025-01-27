@@ -46,17 +46,32 @@ function priceCalculation() {
   return `
     <div class='sumDetails'> <p><span>Zwischenzumme: ${subTotal.toFixed(2)}€</span></p>
       <p><span>Lieferkosten: ${deliveryFee}€</span></p> <p><span><strong>Gesamt:</strong> ${total}€</span></p></div>
+      <div>
+        <button class='btn btn-primary place-order-btn' onclick="placeOrder()">Bestellen</button>
+      </div>
   `;
 }
 
-function selfPickupOrder() {
-  console.log('I pickup my Order self');
-  
-}
-
 function emptyBasket() {
+  basketContentRef.innerHTML = '';
   basketContentRef.innerHTML = `
     <img class='empty-cart' src="./assets/img/cart.png" alt="" />
     <p> Fügen Sie Ihre Lieblingspizza hinzu</p>
   `;
+}
+
+function showMessageAfterPlacingOrder() {
+  let showMessageRef = document.getElementById('show-message');
+console.log('Your Order is Placed Successfully');
+
+  showMessageRef.innerHTML = `Congratulation, Your Order is Placed Successfully`;
+  showMessageRef.style.display = 'block';
+}
+
+function hideShowedMessage() {
+  showMessageAfterPlacingOrder();
+  setTimeout(() => {
+    let showMessageRef = document.getElementById('show-message');
+    showMessageRef.style.display = 'none';
+  }, 3000);
 }

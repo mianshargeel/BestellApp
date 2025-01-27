@@ -23,15 +23,13 @@ function addToBasket(index) {
   let basketItem = basket.find(item => item.name === dish.name); 
     
   if (basketItem) {
-    basketItem.amount++; //i replaced basket with basketItem [//making icreament only on that items, which we getting in basketItem through user-click]
+    basketItem.amount++; 
   } else {
     basket.push({ ...dish});
   }
-  // console.log(dish);
-  // console.log(basket);
   renderBasket();
 }
-//making icreament only on that items, which we getting in basketItem through user-click
+
 function delteItemFromBasket(index) {
   basket.splice(index, 1);
   
@@ -43,14 +41,12 @@ function delteItemFromBasket(index) {
 }
 
 function increaseItemsInBasket(index) {
-  console.log('plus button clicked');
   basket[index].amount++;
   renderBasket();
 }
 
 function decreaseItemsInBasket(index) {
-  console.log('minus button clicked');
-
+ 
   if (basket[index].amount > 1) {
     basket[index].amount--;
   } else {
@@ -59,6 +55,10 @@ function decreaseItemsInBasket(index) {
   renderBasket();
 }
 
+function placeOrder() {
+  hideShowedMessage();
+  emptyBasket(); 
+}
 
 
 
