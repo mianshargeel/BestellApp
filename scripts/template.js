@@ -5,7 +5,7 @@ let basket = [];
 recipeContentRef.innerHTML = '';
 basketContentRef.innerHTML = '';
 
-function renderRecipeTemplate() { //Content-template
+function renderRecipeTemplate() {
   myDishes.forEach((ele, index) => {
     recipeContentRef.innerHTML += `
       <div class="card card-hover mb-2">
@@ -20,14 +20,14 @@ function renderRecipeTemplate() { //Content-template
   });
 }
 
-function renderBasket() { //Basket-template
+function renderBasket() {
   let basketContentHtml = '';
   
   basket.forEach((item, index) => {
     basketContentHtml += `<div className="basketItem"> <p><strong>${item.name}</strong></p>
         <div class='subItems'>
           <img class='plusMinus' onclick='decreaseItemsInBasket(${index})' src="assets/img/minus.png" alt="" />${item.amount}x  
-          <img class='plusMinus' onclick='increaseItemsInBasket(${index})' src="assets/img/plus.png" alt="" />${item.price}€
+          <img class='plusMinus' onclick='increaseItemsInBasket(${index})' src="assets/img/plus.png" alt="" />${(item.price.toFixed(2)).replace('.', ',')}€
           <img onclick='delteItemFromBasket(${index})' class='removeBtn' src="./assets/img/delete.png" alt="" /></div>
       </div>
     `;
@@ -42,12 +42,10 @@ function priceCalculation() {
   for (let i = 0; i < basket.length; i++) {
     subTotal += (basket[i].price * basket[i].amount)
   }
-  let total = parseFloat(subTotal + deliveryFee).toFixed(2);
-  return `
-    <div class='sumDetails'> <p><span>Zwischenzumme: ${subTotal.toFixed(2)}€</span></p>
-      <p><span>Lieferkosten: ${deliveryFee}€</span></p> <p><span><strong>Gesamt:</strong> ${total}€</span></p></div>
-      <div>
-        <button class='btn btn-primary place-order-btn' onclick="placeOrder()">Bestellen</button>
+  let total = (parseFloat(subTotal + deliveryFee).toFixed(2));
+  return `<div class='sumDetails'> <p><span>Zwischenzumme: ${(subTotal.toFixed(2)).replace('.', ',')}€</span></p>
+      <p><span>Lieferkosten: ${(deliveryFee.toFixed(2)).replace('.', ',')}€</span></p> <p><span><strong>Gesamt:</strong> ${total.replace('.', ',')}€</span></p></div>
+      <div><button class='btn btn-primary place-order-btn' onclick="placeOrder()">Bestellen</button>
       </div>
   `;
 }
@@ -59,18 +57,4 @@ function emptyBasket() {
   `;
 }
 
-function showMessageAfterPlacingOrder() {
-  let showMessageRef = document.getElementById('show-message');
-console.log('Your Order is Placed Successfully');
 
-  showMessageRef.innerHTML = `Congratulation, Your Order is Placed Successfully`;
-  showMessageRef.style.display = 'block';
-}
-
-function hideShowedMessage() {
-  showMessageAfterPlacingOrder();
-  setTimeout(() => {
-    let showMessageRef = document.getElementById('show-message');
-    showMessageRef.style.display = 'none';
-  }, 3000);
-}

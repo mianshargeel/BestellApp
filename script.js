@@ -1,4 +1,3 @@
-
 function init() {
   emptyBasket();
   renderRecipeTemplate();
@@ -9,8 +8,8 @@ function showSmallBasket() {
   let basketWrapperRef = document.querySelector('.basketWrapper');
 
   if (contentRef.style.display === 'none') {
-    contentRef.style.display = 'block'; // showing
-    basketWrapperRef.style.display = 'none'; // hiding
+    contentRef.style.display = 'block'; 
+    basketWrapperRef.style.display = 'none';
   } else {
     contentRef.style.display = 'none';
     basketWrapperRef.style.display = 'block';
@@ -46,7 +45,6 @@ function increaseItemsInBasket(index) {
 }
 
 function decreaseItemsInBasket(index) {
- 
   if (basket[index].amount > 1) {
     basket[index].amount--;
   } else {
@@ -56,12 +54,25 @@ function decreaseItemsInBasket(index) {
 }
 
 function placeOrder() {
-  basket.length = 0; //for dummy order to place making Basket empty
+  basket.length = 0; 
   emptyBasket(); 
   hideShowedMessage();
 }
 
+function showMessageAfterPlacingOrder() {
+  let showMessageRef = document.getElementById('show-message');
 
+  showMessageRef.innerHTML = `Congratulation, Your Order is Placed Successfully`;
+  showMessageRef.style.display = 'block';
+}
+
+function hideShowedMessage() {
+  showMessageAfterPlacingOrder();
+  setTimeout(() => {
+    let showMessageRef = document.getElementById('show-message');
+    showMessageRef.style.display = 'none';
+  }, 3000);
+}
 
 
 

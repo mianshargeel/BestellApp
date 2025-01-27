@@ -43,12 +43,12 @@
   padding: 30px;
 }
 
-
 @media screen and (min-width: 601px) {
   .basketWrapper {
     display: block !important; 
   }
 }
+
 @media screen and (max-width: 600px) {
   .basketWrapper {
    display: none;
@@ -78,9 +78,11 @@
   margin-bottom: 10px;
  }
  .show-message{
-  position: absolute;
-    top: 5%;
-    bottom: 50%;
-    left: 0%;
+  margin: 0px !important;
+  width: 100%;
+  position: fixed;
+  top: 32%;
+  bottom: 50%;
+  left: 0;
  }
 }
