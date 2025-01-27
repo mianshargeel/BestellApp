@@ -56,8 +56,9 @@ function decreaseItemsInBasket(index) {
 }
 
 function placeOrder() {
-  hideShowedMessage();
+  basket.length = 0; //for dummy order to place making Basket empty
   emptyBasket(); 
+  hideShowedMessage();
 }
 
 

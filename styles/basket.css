@@ -3,11 +3,9 @@
   padding: 16px;
   border: 2px solid white;
   text-align: center;
-  /* overflow-x: hidden; */
   border-left: 1px solid #d3d3d352;
   display: block;
   flex-grow: 1;
-  background-color: green;
   position: relative;
 }
 .basket{
@@ -19,9 +17,6 @@
 }
 .hidden {
   display: none !important;
-}
-.basketItem{
- 
 }
 .subItems{
   display: flex;
@@ -35,7 +30,7 @@
   cursor: pointer;
 }
 .sumDetails{
-  padding: 20px 20px 0px 20px
+  padding: 20px 20px 0px 20px;
   border-top: 1px solid #d3d3d36e;
 }
 .removeBtn{

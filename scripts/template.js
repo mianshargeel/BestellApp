@@ -53,7 +53,6 @@ function priceCalculation() {
 }
 
 function emptyBasket() {
-  basketContentRef.innerHTML = '';
   basketContentRef.innerHTML = `
     <img class='empty-cart' src="./assets/img/cart.png" alt="" />
     <p> Fügen Sie Ihre Lieblingspizza hinzu</p>
