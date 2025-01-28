@@ -43,6 +43,14 @@
     <section class="basketWrapper">
       <div class="basket">
         <h2>Warenkorb</h2>
+        <!-- Radio btn for Abholung/Lieferung -->
+         <div class="btn-group myOwnRadio" role="group" aria-label="Basic radio toggle button group">
+  <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" onclick="pickupOrderByself()">
+  <label class="btn btn-outline-success" for="btnradio1">Abholung</label>
+
+  <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" checked onclick="pickupOrderByPaidDelivey()">
+  <label class="btn btn-outline-primary" for="btnradio2">Lieferung</label>
+</div>
         <div id="basketContent"></div>
         <button class="btn btn-primary" id="backToContentButton" onclick="showSmallBasket()" >Zurück</button>
       </div>

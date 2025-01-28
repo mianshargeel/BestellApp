@@ -1,9 +1,9 @@
 let recipeContentRef = document.getElementById('recipe-content');
 let basketContentRef = document.getElementById('basketContent');
 let basket = [];
-let subTotal = 0;
+let subTotal;
 let deliveryFee = 5.00;
-let total = 0;
+let total;
 
 recipeContentRef.innerHTML = '';
 basketContentRef.innerHTML = '';
@@ -29,8 +29,9 @@ function renderBasket() {
 }
 
 function priceCalculation() {
+  subTotal = 0;
   for (let i = 0; i < basket.length; i++) {
-    subTotal = (basket[i].price * basket[i].amount)
+    subTotal += (basket[i].price * basket[i].amount);
   }
   total = (parseFloat(subTotal + deliveryFee).toFixed(2));
   return priceCalculationHtml();
@@ -109,5 +110,19 @@ function hideShowedMessage() {
   }, 3000);
 }
 
+function pickupOrderByself() {
+  deliveryFee = 0;
+  subTotal = 0;
+  for (let i = 0; i < basket.length; i++) {
+    subTotal += (basket[i].price * basket[i].amount)
+  }
+  total = (parseFloat(subTotal + deliveryFee).toFixed(2));
+  renderBasket();
 
+  return priceCalculationHtml();
+}
+
+function pickupOrderByPaidDelivey() {
+  console.log('ich will die Lieferung.');
+}
 
