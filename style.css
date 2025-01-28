@@ -120,8 +120,7 @@
 .show-message{
    width: calc(100% - 330px);
    margin-left: 10px;
-  border: 6px solid #8cff1e;
-  background-color: #0a3847;
+  background-color: #1b2529e6;
   height: 70px;
   display: none;
   color: #fff;
@@ -129,6 +128,9 @@
   padding: 16px 0 0 0;
   border-radius: 5px;
   position: fixed;
-  top: 17%;
+  top: 14%;
   z-index: 1000;
+}
+.show-message p{
+  padding: 0 10px 0 10px;
 }
