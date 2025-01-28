@@ -42,13 +42,11 @@
   height: 150px;
   padding: 30px;
 }
-
 @media screen and (min-width: 601px) {
   .basketWrapper {
     display: block !important; 
   }
 }
-
 @media screen and (max-width: 600px) {
   .basketWrapper {
    display: none;

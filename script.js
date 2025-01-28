@@ -20,7 +20,7 @@ function renderRecipeTemplate() {
 }
 
 function renderBasket() {
-  let basketContentHtml = '';
+  let basketContentHtml = ''; 
   
   basket.forEach((item, index) => {
     basketContentHtml += renderBasketHtml(item, index);
