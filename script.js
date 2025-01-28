@@ -15,7 +15,7 @@ function init() {
 
 function renderRecipeTemplate() {
   myDishes.forEach((ele, index) => {
-    recipeContentRef.innerHTML += renderRecipeTemplateHtml(ele, index)
+    recipeContentRef.innerHTML += renderRecipeTemplateHtml(ele, index);
   });
 }
 
@@ -30,7 +30,7 @@ function renderBasket() {
 
 function priceCalculation() {
   for (let i = 0; i < basket.length; i++) {
-    subTotal += (basket[i].price * basket[i].amount)
+    subTotal = (basket[i].price * basket[i].amount)
   }
   total = (parseFloat(subTotal + deliveryFee).toFixed(2));
   return priceCalculationHtml();
@@ -87,10 +87,9 @@ function decreaseItemsInBasket(index) {
 }
 
 function placeOrder() {
-  if (basket.length = 0) {
-    total = 0;
-    subTotal = 0;
-  }
+  basket.length = 0;
+  total = 0;
+  subTotal = 0;
   emptyBasket(); 
   hideShowedMessage();
 }
